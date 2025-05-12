@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let addTaskButton = document.getElementById("addTaskButton");
   let taskInput = document.getElementById("taskInput");
   let taskList = document.getElementById("taskList");
-  let selectedPriority = document.querySelector(
-    'input[name="priority"]:checked'
-  ).id;
+  
 
   //fetching tasks from local storage and rendering them on DOM
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -17,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   addTaskButton.addEventListener("click", () => {
     let taskText = taskInput.value.trim();
     if (taskText === "") return;
+    let selectedPriority = document.querySelector(
+    'input[name="priority"]:checked'
+  ).id;
 
     const newTaskObj = {
       id: Date.now(),
