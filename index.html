@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <body
+    class="bg-gradient-to-t to-slate-900 from-slate-800 h-screen flex justify-start flex-col items-center font-mono"
+  >
+    <img
+      src="newwhite (1).png"
+      class="mt-10 h-36 w-96 bg-clip-text text-transparent"
+      alt=""
+    />
+    <header class="text-center py-10">
+      <h1
+        class="sm:text-5xl text-4xl text-slate-200 font-stretch-semi-expanded font-semibold animate-pulse duration-1000 line-through decoration-4 decoration-slate-400 tracking-wide"
+      >
+        A Minimalistic Productivity Tool
+      </h1>
+      <p class="text-slate-300 text-lg md:text-2xl mt-2 italic">
+        With a retro-modern vibe
+      </p>
+    </header>
+    <div
+      id="appWindow"
+      class="bg-slate-700 sm:w-96 w-[90%] min-h-[25%] flex items-center flex-col justify-start text-white rounded-3xl"
+    >
+      <h2 class="font-extrabold text-4xl mt-5 mb-2">RetroTask</h2>
+      <div
+        id="taskAdder"
+        class="bg-slate-900 rounded-lg w-[90%] min-h-22 flex flex-col justify-around items-center gap-2"
+      >
+        <div class="flex w-[100%] mt-2 justify-around items-center">
+          <input
+            id="taskInput"
+            class="bg-slate-800 w-3/5 focus:outline-none p-1 h-9 placeholder:text-center rounded-lg mr-1"
+            type="text"
+            placeholder="It's RetroTaskin' Time..."
+          />
+          <button
+            id="addTaskButton"
+            class="bg-slate-600 cursor-pointer p-1 h-9 rounded-lg overflow-hidden hover:text-white hover:bg-slate-900 border-2 border-slate-500"
+          >
+            Add Task
+          </button>
+        </div>
+        <div
+          class="rounded-lg font-bold text-lg w-[100%] h-5 flex justify-around mb-3"
+        >
+          <h1 class="justify-self-start">Priority:</h1>
+          <!-- <h1>Add Task Priority</h1> -->
+          <span>
+            <label for="high">High</label>
+            <input
+              id="high"
+              class="accent-red-500 bg-red-600 scale-150"
+              name="priority"
+              type="radio"
+            />
+          </span>
+          <span>
+            <label for="medium">Medium</label>
+            <input
+              id="medium"
+              class="accent-amber-400 bg-amber-500 scale-150"
+              name="priority"
+              type="radio"
+            />
+          </span>
+          <span>
+            <label for="low">Low</label>
+            <input
+              id="low"
+              class="accent-green-400 bg-green-500 scale-150"
+              name="priority"
+              type="radio"
+            />
+          </span>
+        </div>
+      </div>
+
+      <ul
+        id="taskList"
+        class="w-[90%] mt-7 mb-5 max-h-70 scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-slate-700 overflow-y-auto scroll-smooth"
+      ></ul>
+    </div>
+  </body>
+</html>
