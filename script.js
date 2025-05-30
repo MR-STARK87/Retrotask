@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let addTaskButton = document.getElementById("addTaskButton");
   let taskInput = document.getElementById("taskInput");
   let taskList = document.getElementById("taskList");
-  
 
   //fetching tasks from local storage and rendering them on DOM
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -16,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let taskText = taskInput.value.trim();
     if (taskText === "") return;
     let selectedPriority = document.querySelector(
-    'input[name="priority"]:checked'
-  ).id;
+      'input[name="priority"]:checked'
+    ).id;
 
     const newTaskObj = {
       id: Date.now(),
@@ -41,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderTasks(task) {
     let newTask = document.createElement("li");
     newTask.setAttribute("data-id", task.id);
-    if (task.completed) newTask.classList.add("completed", "flex");
+    if (task.completed) newTask.classList.add("line-through", "flex");
     newTask.className =
-      "task relative w-[100%] hover:bg-slate-900 duration-300 cursor-pointer bg-slate-900 ml-0 rounded-lg p-3 mb-2 h-max flex justify-between";
+      "task relative w-[100%] text-lg sm:text-2xl hover:bg-slate-900 duration-300 cursor-pointer bg-slate-900 ml-0 rounded-lg p-3 mb-2 h-max flex justify-between";
 
     //Task text element
     let taskTextSpan = document.createElement("span");
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
     deleteButton.className =
-      "bg-slate-600 p-1 h-7 cursor-pointer rounded-lg justify-self-end hover:text-white hover:bg-slate-900 border-2 border-slate-500";
+      "bg-slate-600 px-2 sm:text-2xl h-7 cursor-pointer rounded-lg justify-self-end hover:text-white text-lg hover:bg-slate-900 border-2 border-slate-500";
 
     //strip creation
     let strip = document.createElement("span");
